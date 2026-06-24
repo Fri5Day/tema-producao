@@ -1,0 +1,41 @@
+import type { ThemeTypes } from '@/types/themeTypes/ThemeType';
+
+export const DarkTheme: ThemeTypes = {
+  name: 'DarkTheme',
+  dark: true,
+  variables: {
+    'carousel-control-size': 10,
+    gradient: 'linear-gradient(to right, #1e3c72, #2a5298)',
+    gradient2: 'linear-gradient(to right, #0f2027, #203a43, #2c5364)',
+    'card-shadow': '0px 1px 4px rgba(255, 255, 255, 0.05)',
+  },
+  colors: {
+    primary: '#0D1A4A', // '#000524', //  '#0D1A4A',
+    secondary: '#424242',
+    info: '#2196F3',
+    success: '#4CAF50',
+    accent: '#FF4081',
+    warning: '#FFC107',
+    error: '#F44336',
+    lightprimary: '#1e3c72',
+    lightsecondary: '#37474F',
+    lightsuccess: '#2E7D32',
+    lighterror: '#D32F2F',
+    lightwarning: '#FBC02D',
+    darkText: '#ffffff',
+    lightText: '#bdbdbd',
+    darkprimary: '#1565C0',
+    darksecondary: '#263238',
+    borderLight: '#424242',
+    inputBorder: '#757575',
+    containerBg: '#121212',
+    surface: '#1E1E1E', // Tema do fundo da aplicação inteira
+    'on-surface-variant': '#2C2C2C',
+    facebook: '#4267b2',
+    twitter: '#1da1f2',
+    linkedin: '#0e76a8',
+    gray100: '#212121',
+    primary200: '#90CAF9',
+    secondary200: '#B0BEC5',
+  },
+};
