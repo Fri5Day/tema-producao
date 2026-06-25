@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <v-navigation-drawer
     class="app-sidebar"
     :rail="!isPinned"
@@ -28,18 +28,17 @@
     <v-divider />
 
     <v-list density="compact" nav>
-      <v-list-item prepend-icon="mdi-folder" title="Geral" value="geral" />
+      <v-list-item
+        prepend-icon="mdi-factory"
+        title="Produção"
+        value="production"
+        :to="{ name: 'production-dashboard' }"
+      />
     </v-list>
   </v-navigation-drawer>
 
-  <v-main>
-
-      <v-card max-width="350" class="ml-16">
-        <v-card-title>Conteúdo do Dashboard</v-card-title>
-        <v-card-text> Aqui vai o conteúdo principal do dashboard. </v-card-text>
-        <v-btn color="primary">Botão de Exemplo</v-btn>
-      </v-card>
-
+  <v-main class="app-main">
+    <router-view />
   </v-main>
 </template>
 
@@ -49,10 +48,7 @@ import { computed, ref } from 'vue'
 const isPinned = ref(false)
 const isHovered = ref(false)
 
-const pinIcon = computed(() => {
-  return isPinned.value ? 'mdi-pin-off' : 'mdi-pin'
-})
-
+const pinIcon = computed(() => (isPinned.value ? 'mdi-pin-off' : 'mdi-pin'))
 const showPinButton = computed(() => isPinned.value || isHovered.value)
 
 function togglePin() {
@@ -79,10 +75,6 @@ function togglePin() {
   font-size: 28px;
 }
 
-.user-info {
-  min-height: 64px;
-}
-
 .pin-button {
   position: absolute;
   top: 10px;
@@ -100,5 +92,10 @@ function togglePin() {
 .pin-button:hover {
   opacity: 1;
   transform: scale(1.08);
+}
+
+.app-main {
+  min-height: 100vh;
+  background: rgb(var(--v-theme-surface));
 }
 </style>

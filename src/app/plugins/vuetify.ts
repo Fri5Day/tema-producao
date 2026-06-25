@@ -1,4 +1,4 @@
-import 'vuetify/styles'
+﻿import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
@@ -6,7 +6,7 @@ import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 import { mdi } from 'vuetify/iconsets/mdi'
 
-import { DEFAULT_THEME, themes } from '@/theme'
+import { DEFAULT_THEME, themes } from '@/app/theme'
 
 const vuetify = createVuetify({
   components,
