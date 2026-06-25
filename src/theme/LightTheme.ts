@@ -1,7 +1,6 @@
-import type { ThemeTypes } from '@/types/themeTypes/ThemeType'
+import type { ThemeDefinition } from 'vuetify'
 
-export const LightTheme: ThemeTypes = {
-  name: 'DefaultTheme',
+export const LightTheme: ThemeDefinition = {
   dark: false,
   variables: {
     // 'border-color': '#F2F2F2', // Ajustado para combinar com o cinza claro da identidade visual

@@ -1,16 +1,12 @@
-// Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-// Material Design Icons
 import '@mdi/font/css/materialdesignicons.css'
 import { mdi } from 'vuetify/iconsets/mdi'
 
-//Themes
-import { DarkTheme } from '@/theme/DarkTheme';
-import { LightTheme } from '@/theme/LightTheme';
+import { DEFAULT_THEME, themes } from '@/theme'
 
 const vuetify = createVuetify({
   components,
@@ -20,11 +16,8 @@ const vuetify = createVuetify({
     sets: { mdi },
   },
   theme: {
-    defaultTheme: 'LightTheme',
-    themes: {
-      LightTheme,
-      DarkTheme,
-    },
+    defaultTheme: DEFAULT_THEME,
+    themes,
   },
 })
 

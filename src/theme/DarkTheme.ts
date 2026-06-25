@@ -1,7 +1,6 @@
-import type { ThemeTypes } from '@/types/themeTypes/ThemeType';
+import type { ThemeDefinition } from 'vuetify'
 
-export const DarkTheme: ThemeTypes = {
-  name: 'DarkTheme',
+export const DarkTheme: ThemeDefinition = {
   dark: true,
   variables: {
     'carousel-control-size': 10,
@@ -38,4 +37,4 @@ export const DarkTheme: ThemeTypes = {
     primary200: '#90CAF9',
     secondary200: '#B0BEC5',
   },
-};
+}

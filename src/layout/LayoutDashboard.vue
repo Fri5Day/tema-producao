@@ -1,9 +1,13 @@
 <template>
   <v-navigation-drawer
+    class="app-sidebar"
     :rail="!isPinned"
+    :rail-width="70"
+    :width="265"
     :expand-on-hover="!isPinned"
     permanent
-    class="app-sidebar"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
   >
     <div class="sidebar-header">
       <v-list-item
@@ -12,9 +16,10 @@
       />
 
       <v-btn
+        v-show="showPinButton"
         class="pin-button"
         :icon="pinIcon"
-        size="x-small"
+        size="small"
         variant="text"
         @click.stop="togglePin"
       />
@@ -23,27 +28,32 @@
     <v-divider />
 
     <v-list density="compact" nav>
-      <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles" />
-
-      <v-list-item
-        prepend-icon="mdi-account-multiple"
-        title="Shared with me"
-        value="shared"
-      />
-
-      <v-list-item prepend-icon="mdi-star" title="Starred" value="starred" />
+      <v-list-item prepend-icon="mdi-folder" title="Geral" value="geral" />
     </v-list>
   </v-navigation-drawer>
+
+  <v-main>
+
+      <v-card max-width="350" class="ml-16">
+        <v-card-title>Conteúdo do Dashboard</v-card-title>
+        <v-card-text> Aqui vai o conteúdo principal do dashboard. </v-card-text>
+        <v-btn color="primary">Botão de Exemplo</v-btn>
+      </v-card>
+
+  </v-main>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
 const isPinned = ref(false)
+const isHovered = ref(false)
 
 const pinIcon = computed(() => {
   return isPinned.value ? 'mdi-pin-off' : 'mdi-pin'
 })
+
+const showPinButton = computed(() => isPinned.value || isHovered.value)
 
 function togglePin() {
   isPinned.value = !isPinned.value
@@ -52,12 +62,21 @@ function togglePin() {
 
 <style scoped>
 .app-sidebar {
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(var(--v-border-color), 0.12);
 }
 
 .sidebar-header {
   position: relative;
   padding-right: 32px;
+}
+
+.app-sidebar :deep(.v-avatar) {
+  width: 40px;
+  height: 40px;
+}
+
+.app-sidebar :deep(.v-list-item__prepend > .v-icon) {
+  font-size: 28px;
 }
 
 .user-info {
