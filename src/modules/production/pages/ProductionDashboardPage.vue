@@ -44,6 +44,7 @@ import ErrorState from '@/shared/components/ErrorState.vue'
 import LoadingState from '@/shared/components/LoadingState.vue'
 
 import ProductionSummaryCards from '../components/ProductionSummaryCards.vue'
+
 import { productionService } from '../services/CProductionService'
 import type { IProductionOrdersSummary } from '../types/IProductionOrdersSummary'
 

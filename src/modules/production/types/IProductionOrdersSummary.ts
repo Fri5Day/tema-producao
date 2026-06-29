@@ -1,4 +1,6 @@
 ﻿export interface IProductionOrdersSummary {
   notStarted: number
-  started: number
+  startedWithoutStockEntry: number
+  partiallyReceived: number
+  fullyReceived: number
 }

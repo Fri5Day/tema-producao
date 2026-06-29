@@ -2,7 +2,9 @@
 
 export type ProductionOrdersSummaryResponse = {
   notStarted?: number
-  started?: number
+  startedWithoutStockEntry?: number
+  partiallyReceived?: number
+  fullyReceived?: number
 }
 
 export function mapProductionOrdersSummary(
@@ -10,7 +12,8 @@ export function mapProductionOrdersSummary(
 ): IProductionOrdersSummary {
   return {
     notStarted: response.notStarted ?? 0,
-    started: response.started ?? 0,
+    startedWithoutStockEntry: response.startedWithoutStockEntry ?? 0,
+    partiallyReceived: response.partiallyReceived ?? 0,
+    fullyReceived: response.fullyReceived ?? 0,
   }
 }
-
